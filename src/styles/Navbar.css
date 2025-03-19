@@ -1,0 +1,55 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: white;
+  padding: 15px 20px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  transition: background-color 0.3s, box-shadow 0.3s, padding 0.3s;
+}
+
+.navbar.scrolled {
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  padding: 10px 20px;
+}
+  .header {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .menu {
+    display: flex;
+    gap: 1.5rem;
+    text-transform: uppercase;
+    color: #333;
+    list-style: none;
+    text-decoration: none;
+  }
+  
+  .menuItem a:hover {
+    color: orange;
+    cursor: pointer;
+    text-decoration: none;
+  }
+ .menuitem a {
+text-decoration: none;
+color: inherit;
+  }
+  
+ 
+  .list {
+    display: flex;
+
+  }
+  a, .link-reset {
+    text-decoration: none !important;
+    color: inherit;
+  }
+  
+  a:hover, .link-reset:hover {
+    text-decoration: none !important;
+    color: orange;
+  }
