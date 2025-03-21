@@ -3,9 +3,9 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Offer from "./pages/Offer";
-import About from "./pages/About";
 
 import Contact from "./pages/Contact";
+import Project from "./pages/Project";
 
 const App: React.FC = () => {
   return (
@@ -16,7 +16,7 @@ const App: React.FC = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/oferta" element={<Offer />} />
-            <Route path="/o-nas" element={<About />} />
+            <Route path="/project" element={<Project />} />
 
             <Route path="/kontakt" element={<Contact />} />
           </Routes>

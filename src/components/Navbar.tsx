@@ -1,9 +1,10 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "../styles/Navbar.css";
 import { useEffect, useState } from "react";
 
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,24 +25,33 @@ const Navbar: React.FC = () => {
         <div className="list">
           <ul className="menu">
             <li>
-              <Link to="/oferta" className="menuItem">
+              <Link
+                to="/oferta"
+                className={`menuItem ${
+                  location.pathname === "/oferta" ? "active" : ""
+                }`}
+              >
                 Oferta
               </Link>
             </li>
             <li>
-              <Link to="/project" className="menuItem">
+              <Link
+                to="/project"
+                className={`menuItem ${
+                  location.pathname === "/project" ? "active" : ""
+                }`}
+              >
                 Galeria realizacji
               </Link>
             </li>
 
             <li>
-              <Link to="/o-nas" className="menuItem">
-                Dlaczego Barczak
-              </Link>
-            </li>
-
-            <li>
-              <Link to="/kontakt" className="menuItem">
+              <Link
+                to="/kontakt"
+                className={`menuItem ${
+                  location.pathname === "/kontakt" ? "active" : ""
+                }`}
+              >
                 Kontakt
               </Link>
             </li>
