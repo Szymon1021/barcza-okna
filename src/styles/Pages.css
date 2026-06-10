@@ -99,7 +99,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  display: flow
 }
 
 .carousel-image-wrapper {
@@ -237,6 +236,12 @@
 
 .carousel-btn.hidden, .carousel-dots.hidden, .carousel-overlay.hidden {
   opacity: 0;
+  pointer-events: none;
+}
+
+.carousel-btn.visible, .carousel-dots.visible, .carousel-overlay.visible {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .offer-carousel-image-wrapper:hover .offer-carousel-overlay {

@@ -1,256 +1,88 @@
-import { useEffect, useState } from "react";
+﻿import { useState } from "react";
 import "../styles/Offer.css";
 import { brands } from "../data/brand";
 import { useTranslation } from "react-i18next";
+import type { Image } from "../types";
 
 const Offer: React.FC = () => {
   const { t } = useTranslation();
-  const [currentIndexes, setCurrentIndexes] = useState(
-    brands.map((brand) => brand.sections.map(() => 0))
-  );
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-  const [modalVisible, setModalVisible] = useState(false);
-  const [isPaused, setIsPaused] = useState(false);
-  const [activeModalId, setActiveModalId] = useState<number | null>(null);
+  const [activeImg, setActiveImg] = useState<Image | null>(null);
+  const [activeBrandName, setActiveBrandName] = useState<string>("");
 
-  const generateHoverIndex = (brandIndex: number, sectionIndex: number) => {
-    return brandIndex * 1000 + sectionIndex;
+  const openModal = (img: Image, brandName: string) => {
+    setActiveImg(img);
+    setActiveBrandName(brandName);
   };
 
-  const toggleModal = (id: number) => {
-    if (activeModalId === id) {
-      setModalVisible(false);
-      setIsPaused(false);
-      setActiveModalId(null);
-    } else {
-      setModalVisible(true);
-      setIsPaused(true);
-      setActiveModalId(id);
-    }
-  };
-
-  useEffect(() => {
-    if (isPaused) return;
-    const interval = setInterval(() => {
-      setCurrentIndexes((prev) =>
-        prev.map((brandIndexes, brandIndex) =>
-          brandIndexes.map(
-            (val, sectionIndex) =>
-              (val + 1) %
-              brands[brandIndex].sections[sectionIndex].images.length
-          )
-        )
-      );
-    }, 10000);
-    return () => clearInterval(interval);
-  }, [isPaused]);
-
-  const goToSlide = (
-    brandIndex: number,
-    sectionIndex: number,
-    slideIndex: number
-  ) => {
-    setCurrentIndexes((prev) => {
-      const newIndexes = [...prev];
-      newIndexes[brandIndex][sectionIndex] = slideIndex;
-      return newIndexes;
-    });
-  };
+  const closeModal = () => setActiveImg(null);
 
   return (
     <section className="page-container">
-      {brands.map((brand, brandIndex) => (
+      {brands.map((brand) => (
         <div key={brand.id} className="brand-container">
           <div className="brand-div">
             <a href={brand.link} target="_blank" rel="noopener noreferrer">
               <img src={brand.logo} alt={brand.name} className="brand-logo" />
             </a>
-
-            <h1 className="brand-title">{brand.name}</h1>
+            <h2 className="brand-title">{brand.name}</h2>
           </div>
           <p className="brand-text">
             {brand.descriptionKey ? t(brand.descriptionKey) : brand.description}
           </p>
-          {brand.sections.map((section, sectionIndex) => (
-            <div
-              key={section.id}
-              className={`offer-section ${
-                sectionIndex % 2 === 0 ? "reverse" : ""
-              }`}
-              onMouseEnter={() =>
-                setHoveredIndex(generateHoverIndex(brandIndex, sectionIndex))
-              }
-              onMouseLeave={() => setHoveredIndex(null)}
-            >
-              <div className="carousel-container">
-                <button
-                  className={`carousel-btn left ${
-                    hoveredIndex ===
-                    generateHoverIndex(brandIndex, sectionIndex)
-                      ? "visible"
-                      : "hidden"
-                  }`}
-                  onClick={() =>
-                    goToSlide(
-                      brandIndex,
-                      sectionIndex,
-                      (currentIndexes[brandIndex][sectionIndex] -
-                        1 +
-                        section.images.length) %
-                        section.images.length
-                    )
-                  }
-                >
-                  &#10094;
-                </button>
-                <div className="carousel-image-wrapper">
-                  <img
-                    src={
-                      section.images[currentIndexes[brandIndex][sectionIndex]]
-                        .src
-                    }
-                    alt={section.title}
-                    className="carousel-image small"
-                  />
-                  <div
-                    className={`carousel-overlay ${
-                      hoveredIndex ===
-                      generateHoverIndex(brandIndex, sectionIndex)
-                        ? "visible"
-                        : "hidden"
-                    }`}
-                  >
-                    {(() => {
-                      const img = section.images[currentIndexes[brandIndex][sectionIndex]];
-                      return img.descriptionKey ? t(img.descriptionKey) : img.description;
-                    })()}
-                  </div>
-                </div>
 
-                <button
-                  className={`carousel-btn right ${
-                    hoveredIndex ===
-                    generateHoverIndex(brandIndex, sectionIndex)
-                      ? "visible"
-                      : "hidden"
-                  }`}
-                  onClick={() =>
-                    goToSlide(
-                      brandIndex,
-                      sectionIndex,
-                      (currentIndexes[brandIndex][sectionIndex] + 1) %
-                        section.images.length
-                    )
-                  }
-                >
-                  &#10095;
-                </button>
-                <div
-                  className={`carousel-dots ${
-                    hoveredIndex ===
-                    generateHoverIndex(brandIndex, sectionIndex)
-                      ? "visible"
-                      : "hidden"
-                  }`}
-                >
-                  {section.images.map((_, slideIndex) => (
-                    <span
-                      key={slideIndex}
-                      className={`dot ${
-                        slideIndex === currentIndexes[brandIndex][sectionIndex]
-                          ? "active"
-                          : ""
-                      }`}
-                      onClick={() =>
-                        goToSlide(brandIndex, sectionIndex, slideIndex)
-                      }
-                    ></span>
-                  ))}
-                </div>
-                <button
-                  className="name-button"
-                  onClick={() =>
-                    toggleModal(
-                      section.images[currentIndexes[brandIndex][sectionIndex]]
-                        .id
-                    )
-                  }
-                >
-                  {
-                    section.images[currentIndexes[brandIndex][sectionIndex]]
-                      .name
-                  }
-                </button>
-                {activeModalId ===
-                  section.images[currentIndexes[brandIndex][sectionIndex]].id &&
-                  modalVisible && (
-                    <div className="modal">
-                      <div className="modal-content">
-                        <span
-                          className="close"
-                          onClick={() =>
-                            toggleModal(
-                              section.images[
-                                currentIndexes[brandIndex][sectionIndex]
-                              ].id
-                            )
-                          }
-                        >
-                          &times;
-                        </span>
-                        <img
-                          src={
-                            section.images[
-                              currentIndexes[brandIndex][sectionIndex]
-                            ].srcModal ||
-                            section.images[
-                              currentIndexes[brandIndex][sectionIndex]
-                            ].src
-                          }
-                          alt={section.title}
-                          className="modal-image"
-                        />
-                        <h2>
-                          {
-                            section.images[
-                              currentIndexes[brandIndex][sectionIndex]
-                            ].name
-                          }
-                        </h2>
-                        <p>
-                          {(() => {
-                            const img = section.images[currentIndexes[brandIndex][sectionIndex]];
-                            return img.descriptionModalKey ? t(img.descriptionModalKey) : img.descriptionModal;
-                          })()}
-                        </p>
-                        <a
-                          href={
-                            section.images[
-                              currentIndexes[brandIndex][sectionIndex]
-                            ].link
-                          }
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="orange-button"
-                        >
-                          {t('offer.goToWebsite')} {brand.name}
-                        </a>
-                      </div>
+          {brand.sections.map((section) => (
+            <div key={section.id} className="offer-section-block">
+              <h3 className="offer-section-heading">
+                {section.titleKey ? t(section.titleKey) : section.title}
+              </h3>
+              <p className="offer-section-desc">
+                {section.descriptionKey ? t(section.descriptionKey) : section.description}
+              </p>
+              <div className="offer-grid">
+                {section.images.map((img) => (
+                  <div
+                    key={img.id}
+                    className="offer-tile"
+                    onClick={() => openModal(img, brand.name)}
+                  >
+                    <img src={img.src} alt={img.name} className="offer-tile-img" />
+                    <div className="offer-tile-overlay">
+                      <span>{img.name}</span>
                     </div>
-                  )}
-              </div>
-              <div className="text-container">
-                <h2 className="section-title">
-                  {section.titleKey ? t(section.titleKey) : section.title}
-                </h2>
-                <p className="section-description">
-                  {section.descriptionKey ? t(section.descriptionKey) : section.description}
-                </p>
+                  </div>
+                ))}
               </div>
             </div>
           ))}
         </div>
       ))}
+
+      {activeImg && (
+        <div className="modal" onClick={closeModal}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <span className="close" onClick={closeModal}>&times;</span>
+            <img
+              src={activeImg.srcModal || activeImg.src}
+              alt={activeImg.name}
+              className="modal-image"
+            />
+            <h2>{activeImg.name}</h2>
+            <p>
+              {activeImg.descriptionModalKey
+                ? t(activeImg.descriptionModalKey)
+                : activeImg.descriptionModal}
+            </p>
+            <a
+              href={activeImg.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="orange-button"
+            >
+              {t("offer.goToWebsite")} {activeBrandName}
+            </a>
+          </div>
+        </div>
+      )}
     </section>
   );
 };

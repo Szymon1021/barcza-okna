@@ -3,21 +3,112 @@ import "../styles/Home.css";
 import "../styles/Project.css";
 import { useTranslation } from "react-i18next";
 
+const IMAGE_SRCS = [
+  "/images/WhatsApp%20Image%202026-03-31%20at%2016.12.53.jpeg",
+  "/images/WhatsApp%20Image%202026-05-30%20at%2007.07.46.jpeg",
+  "/images/WhatsApp%20Image%202026-06-10%20at%2017.57.41.jpeg",
+  "/images/WhatsApp%20Image%202026-06-10%20at%2018.22.33.jpeg",
+  "/images/WhatsApp%20Image%202026-06-10%20at%2018.23.01.jpeg",
+  "/images/WhatsApp%20Image%202026-06-10%20at%2018.23.18.jpeg",
+  "/images/WhatsApp%20Image%202026-06-10%20at%2018.23.49.jpeg",
+  "/images/WhatsApp%20Image%202026-06-10%20at%2018.23.51%20%281%29.jpeg",
+  "/images/WhatsApp%20Image%202026-06-10%20at%2018.23.51.jpeg",
+  "/images/WhatsApp%20Image%202026-06-10%20at%2018.26.05.jpeg",
+  "/images/WhatsApp%20Image%202026-06-10%20at%2018.29.25%20%281%29.jpeg",
+  "/images/WhatsApp%20Image%202026-06-10%20at%2018.29.25.jpeg",
+  "/images/WhatsApp%20Image%202026-06-10%20at%2018.29.26%20%281%29.jpeg",
+  "/images/WhatsApp%20Image%202026-06-10%20at%2018.29.26.jpeg",
+  "/images/WhatsApp%20Image%202026-06-10%20at%2018.29.27%20%281%29.jpeg",
+  "/images/WhatsApp%20Image%202026-06-10%20at%2018.29.27.jpeg",
+  "/images/WhatsApp%20Image%202026-06-10%20at%2018.29.28%20%281%29.jpeg",
+  "/images/WhatsApp%20Image%202026-06-10%20at%2018.29.28%20%282%29.jpeg",
+  "/images/WhatsApp%20Image%202026-06-10%20at%2018.29.28.jpeg",
+  "/images/WhatsApp%20Image%202026-06-10%20at%2018.29.29.jpeg",
+  "/images/WhatsApp%20Image%202026-06-10%20at%2018.29.30%20%281%29.jpeg",
+  "/images/WhatsApp%20Image%202026-06-10%20at%2018.29.30.jpeg",
+  "/images/WhatsApp%20Image%202026-06-10%20at%2018.29.31%20%281%29.jpeg",
+  "/images/WhatsApp%20Image%202026-06-10%20at%2018.29.31.jpeg",
+  "/images/WhatsApp%20Image%202026-06-10%20at%2018.29.32%20%281%29.jpeg",
+  "/images/WhatsApp%20Image%202026-06-10%20at%2018.29.32.jpeg",
+  "/images/WhatsApp%20Image%202026-06-10%20at%2018.29.33%20%281%29.jpeg",
+  "/images/WhatsApp%20Image%202026-06-10%20at%2018.29.33%20%282%29.jpeg",
+  "/images/WhatsApp%20Image%202026-06-10%20at%2018.29.33%20%283%29.jpeg",
+  "/images/WhatsApp%20Image%202026-06-10%20at%2018.29.33%20%284%29.jpeg",
+  "/images/WhatsApp%20Image%202026-06-10%20at%2018.29.33.jpeg",
+  "/images/WhatsApp%20Image%202026-06-10%20at%2018.29.34.jpeg",
+  "/images/WhatsApp%20Image%202026-06-10%20at%2018.29.35%20%281%29.jpeg",
+  "/images/WhatsApp%20Image%202026-06-10%20at%2018.29.35.jpeg",
+  "/images/WhatsApp%20Image%202026-06-10%20at%2018.29.36%20%281%29.jpeg",
+  "/images/WhatsApp%20Image%202026-06-10%20at%2018.29.36.jpeg",
+  "/images/WhatsApp%20Image%202026-06-10%20at%2018.29.37.jpeg",
+  "/images/WhatsApp%20Image%202026-06-10%20at%2018.32.40.jpeg",
+  "/images/WhatsApp%20Image%202026-06-10%20at%2018.32.41%20%281%29.jpeg",
+  "/images/WhatsApp%20Image%202026-06-10%20at%2018.32.41.jpeg",
+  "/images/WhatsApp%20Image%202026-06-10%20at%2018.32.42%20%281%29.jpeg",
+  "/images/WhatsApp%20Image%202026-06-10%20at%2018.32.42.jpeg",
+  "/images/WhatsApp%20Image%202026-06-10%20at%2018.32.43%20%281%29.jpeg",
+  "/images/WhatsApp%20Image%202026-06-10%20at%2018.32.43%20%282%29.jpeg",
+  "/images/WhatsApp%20Image%202026-06-10%20at%2018.32.43.jpeg",
+  "/images/WhatsApp%20Image%202026-06-10%20at%2018.32.44%20%281%29.jpeg",
+  "/images/WhatsApp%20Image%202026-06-10%20at%2018.32.44.jpeg",
+  "/images/WhatsApp%20Image%202026-06-10%20at%2018.32.45%20%281%29.jpeg",
+  "/images/WhatsApp%20Image%202026-06-10%20at%2018.32.45%20%282%29.jpeg",
+  "/images/WhatsApp%20Image%202026-06-10%20at%2018.32.45.jpeg",
+  "/images/WhatsApp%20Image%202026-06-10%20at%2018.32.46%20%281%29.jpeg",
+  "/images/WhatsApp%20Image%202026-06-10%20at%2018.32.46%20%282%29.jpeg",
+  "/images/WhatsApp%20Image%202026-06-10%20at%2018.32.46.jpeg",
+  "/images/WhatsApp%20Image%202026-06-10%20at%2018.32.47%20%281%29.jpeg",
+  "/images/WhatsApp%20Image%202026-06-10%20at%2018.32.47.jpeg",
+  "/images/WhatsApp%20Image%202026-06-10%20at%2018.32.48%20%281%29.jpeg",
+  "/images/WhatsApp%20Image%202026-06-10%20at%2018.32.48.jpeg",
+  "/images/WhatsApp%20Image%202026-06-10%20at%2018.32.49.jpeg",
+  "/images/WhatsApp%20Image%202026-06-10%20at%2018.32.50%20%281%29.jpeg",
+  "/images/WhatsApp%20Image%202026-06-10%20at%2018.32.50.jpeg",
+  "/images/WhatsApp%20Image%202026-06-10%20at%2018.32.51%20%281%29.jpeg",
+  "/images/WhatsApp%20Image%202026-06-10%20at%2018.32.51.jpeg",
+  "/images/WhatsApp%20Image%202026-06-10%20at%2018.32.52%20%281%29.jpeg",
+  "/images/WhatsApp%20Image%202026-06-10%20at%2018.32.52.jpeg",
+  "/images/WhatsApp%20Image%202026-06-10%20at%2018.32.53.jpeg",
+  "/images/WhatsApp%20Image%202026-06-10%20at%2018.32.54%20%281%29.jpeg",
+  "/images/WhatsApp%20Image%202026-06-10%20at%2018.32.54.jpeg",
+  "/images/WhatsApp%20Image%202026-06-10%20at%2018.32.55%20%281%29.jpeg",
+  "/images/WhatsApp%20Image%202026-06-10%20at%2018.32.55.jpeg",
+  "/images/WhatsApp%20Image%202026-06-10%20at%2018.32.56.jpeg",
+  "/images/WhatsApp%20Image%202026-06-10%20at%2018.32.57.jpeg",
+  "/images/WhatsApp%20Image%202026-06-10%20at%2018.36.56.jpeg",
+  "/images/WhatsApp%20Image%202026-06-10%20at%2018.36.58.jpeg",
+  "/images/WhatsApp%20Image%202026-06-10%20at%2018.36.59%20%281%29.jpeg",
+  "/images/WhatsApp%20Image%202026-06-10%20at%2018.36.59.jpeg",
+  "/images/WhatsApp%20Image%202026-06-10%20at%2018.37.00%20%281%29.jpeg",
+  "/images/WhatsApp%20Image%202026-06-10%20at%2018.37.00.jpeg",
+  "/images/WhatsApp%20Image%202026-06-10%20at%2018.37.01%20%281%29.jpeg",
+  "/images/WhatsApp%20Image%202026-06-10%20at%2018.37.01%20%282%29.jpeg",
+  "/images/WhatsApp%20Image%202026-06-10%20at%2018.37.01.jpeg",
+  "/images/WhatsApp%20Image%202026-06-10%20at%2018.37.02%20%281%29.jpeg",
+  "/images/WhatsApp%20Image%202026-06-10%20at%2018.37.02.jpeg",
+  "/images/WhatsApp%20Image%202026-06-10%20at%2018.37.03%20%281%29.jpeg",
+  "/images/WhatsApp%20Image%202026-06-10%20at%2018.37.03.jpeg",
+  "/images/WhatsApp%20Image%202026-06-10%20at%2018.37.04%20%281%29.jpeg",
+  "/images/WhatsApp%20Image%202026-06-10%20at%2018.37.04%20%282%29.jpeg",
+  "/images/WhatsApp%20Image%202026-06-10%20at%2018.37.04.jpeg",
+  "/images/WhatsApp%20Image%202026-06-10%20at%2018.37.05.jpeg",
+  "/images/WhatsApp%20Image%202026-06-10%20at%2018.41.08.jpeg",
+  "/images/WhatsApp%20Image%202026-06-10%20at%2018.41.11%20%281%29.jpeg",
+  "/images/WhatsApp%20Image%202026-06-10%20at%2018.41.11.jpeg",
+  "/images/WhatsApp%20Image%202026-06-10%20at%2018.41.12.jpeg",
+  "/images/WhatsApp%20Image%202026-06-10%20at%2051.jpeg",
+];
+
 const Home: React.FC = () => {
   const { t } = useTranslation();
   const [current, setCurrent] = useState(0);
   const [hovered, setHovered] = useState(false);
   const [lightbox, setLightbox] = useState<number | null>(null);
 
-  const projects = useMemo(() => [
-    { src: "/images/project1.png", description: t("project.projects.project1") },
-    { src: "/images/project2.png", description: t("project.projects.project2") },
-    { src: "/images/project3.png", description: t("project.projects.project3") },
-    { src: "/images/project4.png", description: t("project.projects.project4") },
-    { src: "/images/WhatsApp%20Image%202026-03-31%20at%2016.12.53.jpeg", description: t("project.projects.project5") },
-    { src: "/images/WhatsApp%20Image%202026-05-30%20at%2007.07.46.jpeg", description: t("project.projects.project6") },
-    { src: "/images/WhatsApp%20Image%202026-06-10%20at%2017.57.41.jpeg", description: t("project.projects.project7") },
-  ], [t]);
+  const projects = useMemo(
+    () => IMAGE_SRCS.map((src) => ({ src, description: t("project.projects.project5") })),
+    [t]
+  );
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -74,6 +165,7 @@ const Home: React.FC = () => {
 
       {/* Tekst powitalny */}
       <div className="home-text">
+        <img src="/images/logo_barczak.jpg" alt="Barczak Okna" className="home-text-logo" />
         <h1>{t('home.welcome')}</h1>
         <p>{t('home.subtitle')}</p>
       </div>
