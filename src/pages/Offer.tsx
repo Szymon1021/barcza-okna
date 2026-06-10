@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
-import "../styles/Pages.css";
+import "../styles/Offer.css";
 import { brands } from "../data/brand";
+import { useTranslation } from "react-i18next";
 
 const Offer: React.FC = () => {
+  const { t } = useTranslation();
   const [currentIndexes, setCurrentIndexes] = useState(
     brands.map((brand) => brand.sections.map(() => 0))
   );
@@ -66,7 +68,9 @@ const Offer: React.FC = () => {
 
             <h1 className="brand-title">{brand.name}</h1>
           </div>
-          <p className="brand-text">{brand.description}</p>
+          <p className="brand-text">
+            {brand.descriptionKey ? t(brand.descriptionKey) : brand.description}
+          </p>
           {brand.sections.map((section, sectionIndex) => (
             <div
               key={section.id}
@@ -116,10 +120,10 @@ const Offer: React.FC = () => {
                         : "hidden"
                     }`}
                   >
-                    {
-                      section.images[currentIndexes[brandIndex][sectionIndex]]
-                        .description
-                    }
+                    {(() => {
+                      const img = section.images[currentIndexes[brandIndex][sectionIndex]];
+                      return img.descriptionKey ? t(img.descriptionKey) : img.description;
+                    })()}
                   </div>
                 </div>
 
@@ -214,11 +218,10 @@ const Offer: React.FC = () => {
                           }
                         </h2>
                         <p>
-                          {
-                            section.images[
-                              currentIndexes[brandIndex][sectionIndex]
-                            ].descriptionModal
-                          }
+                          {(() => {
+                            const img = section.images[currentIndexes[brandIndex][sectionIndex]];
+                            return img.descriptionModalKey ? t(img.descriptionModalKey) : img.descriptionModal;
+                          })()}
                         </p>
                         <a
                           href={
@@ -230,15 +233,19 @@ const Offer: React.FC = () => {
                           rel="noopener noreferrer"
                           className="orange-button"
                         >
-                          Przejdź do strony {brand.name}
+                          {t('offer.goToWebsite')} {brand.name}
                         </a>
                       </div>
                     </div>
                   )}
               </div>
               <div className="text-container">
-                <h2 className="section-title">{section.title}</h2>
-                <p className="section-description">{section.description}</p>
+                <h2 className="section-title">
+                  {section.titleKey ? t(section.titleKey) : section.title}
+                </h2>
+                <p className="section-description">
+                  {section.descriptionKey ? t(section.descriptionKey) : section.description}
+                </p>
               </div>
             </div>
           ))}

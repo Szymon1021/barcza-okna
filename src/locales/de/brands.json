@@ -1,0 +1,80 @@
+{
+  "brands": {
+    "veka": {
+      "name": "VEKA",
+      "description": "VEKA Polen ist ein Hersteller von Fensterprofil-Systemen, Schiebetürsystemen und Rollläden aus Kunststoff. Seit 1994 sind wir auf dem polnischen Baumarkt präsent. Der Firmensitz befindet sich in Skierniewice. Von einem kleinen regionalen Unternehmen haben wir uns zum Weltmarktführer für PVC-Fenster- und Türprofil-Systeme entwickelt. Die Qualität der VEKA-Profile ist bei Fensterherstellern, Architekten und Investoren bekannt.",
+      "sections": {
+        "windows": {
+          "title": "Fenster",
+          "description": "Fenster sind ein äußerst wichtiges Element der Gebäudefassade. Sie beleuchten Räume und schützen vor äußeren Einflüssen wie Wind, Regen und Schnee. Sie sorgen für ein angenehmes Raumklima. Gute Fenster mit hochwertigen Profilen wie VEKA sind für die richtige Energiebilanz des Gebäudes von großer Bedeutung. Energiesparende Fenster sind ein notwendiges und unverzichtbares Element im modernen Bauwesen. VEKA bietet verschiedene PVC-Fenstersysteme, die alle technischen und gestalterischen Anforderungen erfüllen. Die VEKA-Qualität gewährleistet jahrelange zuverlässige Fensterfunktion."
+        },
+        "sliding_doors": {
+          "title": "Schiebetürsysteme",
+          "description": "Wählen Sie eines unserer Hebe-Schiebetürsysteme. Auf modernen Technologien basierende Systeme ermöglichen die Konstruktion großer Verglasungen unter Verwendung schmaler Profile."
+        },
+        "shutters": {
+          "title": "Rollläden",
+          "description": "Unsere Außenrollläden bestehen aus hochwertigem Kunststoff, der schlagfest und witterungsbeständig ist. Sie garantieren hohe Stabilität und gute Isolierung."
+        }
+      },
+      "images": {
+        "101": {
+          "description": "Höchste Qualität! VEKA bietet ausschließlich Profile der Klasse A (gemäß Norm PN-EN 12608). Die Wandstärke der Außenprofile beträgt 3 mm (Toleranz 0,2 mm).",
+          "descriptionModal": "Moderne Fenster mit SOFTLINE 82 AD Profilsystemen optimieren die Energiebilanz des Gebäudes. Sie sind energieeffizient, langlebig, stabil und sicher. Selbst in großen Konstruktionen können SOFTLINE 82 AD Profile schmal sein – ein Vorteil für moderne Architektur und stilvolle Renovierungen. SOFTLINE 82 AD ist mit zwei Anschlagdichtungen ausgestattet."
+        },
+        "102": {
+          "description": "Tiefe Glasaufnahme – Das Glaspaket wird 25 mm tief in das Profil eingesetzt, wodurch das Fenster bessere Wärmeeigenschaften aufweist und weniger kondensationsanfällig ist.",
+          "descriptionModal": "Das SOFTLINE 82 MD Profilsystem eignet sich zur Herstellung energieeffizienter, moderner PVC-Fenster, die die Energiebilanz jedes Gebäudes optimieren. Es ist die ideale Wahl für Niedrigenergie- und Passivhäuser. SOFTLINE 82 MD Profile zeichnen sich durch außergewöhnliche Langlebigkeit, Stabilität und Sicherheit aus."
+        },
+        "103": {
+          "description": "Höchste Qualität! VEKA bietet ausschließlich Profile der Klasse A (gemäß Norm PN-EN 12608). Die Wandstärke der Außenprofile beträgt 3 mm (Toleranz 0,2 mm).",
+          "descriptionModal": "Dank der Bautiefe von 76 mm vereinen SOFTLINE 76 AD Profile die Vorteile von 70- und 82-mm-Systemen und bieten eine wirtschaftliche Lösung mit positiver Wirkung auf die Energieeffizienz des Gebäudes. Sie senken Heizkosten und schützen vor Kälte, Lärm und Feuchtigkeit. Möglich ist die Montage von Glaseinheiten mit erhöhter Schalldämmung und Einbruchschutz."
+        },
+        "104": {
+          "description": "Höchste Qualität! VEKA bietet ausschließlich Profile der Klasse A (gemäß Norm PN-EN 12608). Die Wandstärke der Außenprofile beträgt 3 mm (Toleranz 0,2 mm).",
+          "descriptionModal": "SOFTLINE 76 MD Profile verfügen über drei Abdichtungsebenen mit Mitteldichtung und schützen effektiv vor Lärm, Kälte, Feuchtigkeit und Zugluft. Als Mehrkammersystem mit 76 mm Bautiefe vereint es die Vorteile von 70- und 82-mm-Systemen. Möglich ist die Montage von Glaseinheiten mit erhöhter Schalldämmung und Einbruchschutz."
+        },
+        "105": {
+          "description": "Höchste Qualität! VEKA bietet ausschließlich Profile der Klasse A (gemäß Norm PN-EN 12608). Die Wandstärke der Außenprofile beträgt 3 mm (Toleranz 0,2 mm).",
+          "descriptionModal": "Dank moderner PVC-Fenster aus VEKA-Profilen ist jedes Haus einzigartig. Das klassische Design der SOFTLINE 70 AD und PERFECTLINE Profile mit leicht abgerundeten Konturen ist zeitlos und fügt sich hervorragend in moderne wie traditionelle Architekturstile ein."
+        },
+        "201": {
+          "description": "Die von VEKA geprüften Konstruktionslösungen garantieren Sicherheit in vielerlei Hinsicht, u. a. hohen Widerstand gegen Einbruchversuche.",
+          "descriptionModal": "Mit dem wachsenden Bedarf an platzsparenden Lösungen wird die optimale Raumnutzung immer wichtiger. Die Schiebetüren VEKAMOVE 76 sind die energieeffiziente Antwort auf diese Herausforderung. Sie verleihen Innenräumen jeder Größe eine freundliche und geräumige Atmosphäre."
+        },
+        "202": {
+          "description": "Hervorragende Wärmedämmung – Wärmedurchgangskoeffizient Ud bis zu 0,78 W/(m²K), bei Ug = 0,5 W/(m²K), ψg = 0,031 W/(mK) (Elementabmessung 3,5 × 2,3 m).",
+          "descriptionModal": "VEKAMOTION 82 ist ein auf modernen Technologien basierendes System, das die Konstruktion großformatiger Türen mit schmalen Profilen ermöglicht. Es erfüllt die höchsten Anforderungen von Architekten, Verarbeitern und Investoren. Dank der PVC-Schwelle kann der Übergang schwellenlos gestaltet werden – bei maximaler Energieeffizienz."
+        },
+        "203": {
+          "description": "Hervorragende Wärmedämmung – Wärmedurchgangskoeffizient Ud bis zu 0,73 W/(m²K), bei Ug = 0,5 W/(m²K), ψg = 0,031 W/(mK) (Elementabmessung 3,5 × 2,3 m).",
+          "descriptionModal": "Das VEKAMOTION 82 MAX Hebe-Schiebe-Terrassensystem ist eine innovative Lösung für Terrassenverglasungen. Es ermöglicht sehr große Verglasungen in schmalen Profilen. Der Rahmen kann nahezu vollständig verputzt werden, was den Eindruck rahmenloser Verglasungen erzeugt. Das System wurde mit dem Red Dot Design Award ausgezeichnet."
+        },
+        "301": {
+          "description": "Kann unten oder vorne montiert werden – leicht ohne Werkzeug zu öffnen, auch wenn die Box von innen verputzt ist.",
+          "descriptionModal": "Das VEKAVARIANT 2.0 System erfüllt alle Anforderungen an moderne Rollladenboxen. Erhältlich in drei Größen. Garantiert hervorragende Wärmedämmung. Kompatibel mit Fenstersystemen anderer Hersteller, ermöglicht die Montage von Fliegengittern. Auch als spezielle VEKAVARIANT EPS (Grupor) Box für beste Schall- und Wärmedämmung erhältlich."
+        },
+        "302": {
+          "description": "",
+          "descriptionModal": "VEKA bietet eine breite Palette von Profilen für hochwertige Außenrollläden, die selbst extremen Wetterbedingungen standhalten. Rolladenstäbe eignen sich für verschiedene Anwendungen und Anforderungen."
+        }
+      }
+    },
+    "martom": {
+      "name": "Martom",
+      "description": "Türen sind die Visitenkarte unseres Hauses. Sie sind ein Vorgeschmack auf das, was drinnen ist. Sie sind Botschafter und gleichzeitig Wächter des Heims. Bevor man die Schwelle des Hauses überschreitet, hat man es mit ihnen zu tun. Es sind die Türen, die unsere Gäste begrüßen.",
+      "sections": {
+        "offer": {
+          "title": "Martom Angebot",
+          "description": "Wir arbeiten mit der Firma Martom zusammen. Klicken Sie auf den Button und sehen Sie sich das Angebot auf der Website von Martom an."
+        }
+      },
+      "images": {
+        "401": {
+          "description": "Warum sich für Türen der Firma Martom entscheiden.",
+          "descriptionModal": "Klicken Sie auf den Button, um zur Website zu gelangen."
+        }
+      }
+    }
+  }
+}

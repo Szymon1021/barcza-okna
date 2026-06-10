@@ -1,0 +1,56 @@
+{
+  "nav": {
+    "about": "Über uns",
+    "offer": "Angebot",
+    "gallery": "Projektgalerie",
+    "contact": "Kontakt"
+  },
+  "home": {
+    "welcome": "Willkommen bei Barczak Fenster",
+    "subtitle": "Höchste Qualität von Fenstern und Türen für Ihr Zuhause.",
+    "slides": {
+      "slide1": "Moderne Fenster für Ihr Zuhause. Sie bieten hervorragende Wärmedämmung, minimieren Wärmeverluste und reduzieren Energiekosten. Erhältlich in verschiedenen Farben und Stilen.",
+      "slide2": "Elegante Lösungen für Innenräume. Fenster, die Funktionalität mit Ästhetik verbinden und dem Interieur einen einzigartigen Charakter verleihen. Die ideale Wahl für Menschen, die Design und Komfort schätzen.",
+      "slide3": "Innovative Fenstertechnologien. Wir nutzen die neuesten technologischen Errungenschaften, um die Sicherheit, Haltbarkeit und Energieeffizienz unserer Produkte zu erhöhen.",
+      "slide4": "Langlebige und stilvolle Fenster für jedes Gebäude. Dank solider Materialien und modernem Design sind sie wetterfest und gewährleisten Langlebigkeit."
+    }
+  },
+  "project": {
+    "title": "Unsere Projekte",
+    "subtitle": "Beispiele unserer realisierten Projekte.",
+    "viewSlideshow": "Diashow",
+    "viewGrid": "Kacheln",
+    "projects": {
+      "project1": "Moderne Fenster in einem Wohngebäude – Eleganz und Energieeffizienz.",
+      "project2": "Verglaste Aluminiumfassaden – moderne Lösungen für Bürogebäude.",
+      "project3": "Klassische Holzfenster in einem historischen Mietshaus – Kombination aus Stil und Funktionalität.",
+      "project4": "Klassische Holzfenster in einem historischen Mietshaus – Kombination aus Stil und Funktionalität.",
+      "project5": "Ausführung Barczak Okna.",
+      "project6": "Ausführung Barczak Okna.",
+      "project7": "Ausführung Barczak Okna."
+    }
+  },
+  "contact": {
+    "title": "Kontakt",
+    "subtitle": "Kontaktieren Sie uns, um mehr zu erfahren.",
+    "imageAlt": "Kontakt",
+    "phone": "Telefon",
+    "email": "E-Mail",
+    "address": "Adresse",
+    "hours": "Öffnungszeiten",
+    "hoursValue": "Mo–Fr: 8:00–17:00, Sa: 9:00–13:00"
+  },
+  "about": {
+    "title": "Über uns",
+    "subtitle": "Wir sind ein Unternehmen mit langjähriger Erfahrung in der Fenster- und Türenbranche.",
+    "imageAlt": "Über uns"
+  },
+  "footer": {
+    "rights": "© {{year}} Barczak Fenster. Alle Rechte vorbehalten.",
+    "privacy": "Datenschutzrichtlinie",
+    "contact": "Kontakt"
+  },
+  "offer": {
+    "goToWebsite": "Zur Website gehen"
+  }
+}

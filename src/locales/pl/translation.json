@@ -1,0 +1,56 @@
+{
+  "nav": {
+    "about": "O nas",
+    "offer": "Oferta",
+    "gallery": "Galeria realizacji",
+    "contact": "Kontakt"
+  },
+  "home": {
+    "welcome": "Witamy w Barczak Okna",
+    "subtitle": "Najwyższa jakość okien i drzwi dla Twojego domu.",
+    "slides": {
+      "slide1": "Nowoczesne okna dla Twojego domu. Zapewniają doskonałą izolację termiczną, minimalizując straty ciepła i redukując rachunki za energię. Dostępne w różnych wariantach kolorystycznych i stylach.",
+      "slide2": "Eleganckie rozwiązania do wnętrz. Okna, które łączą funkcjonalność z estetyką, nadając wnętrzu wyjątkowy charakter. Wybór idealny dla osób ceniących design i komfort.",
+      "slide3": "Innowacyjne technologie okienne. Wykorzystujemy najnowsze osiągnięcia technologiczne, aby zwiększyć bezpieczeństwo, trwałość i energooszczędność naszych produktów.",
+      "slide4": "Wytrzymałe i stylowe okna do każdego budynku. Dzięki solidnym materiałom i nowoczesnemu designowi są odporne na warunki atmosferyczne i zapewniają długowieczność."
+    }
+  },
+  "project": {
+    "title": "Nasze realizacje",
+    "subtitle": "Przykłady naszych zrealizowanych projektów.",
+    "viewSlideshow": "Prezentacja",
+    "viewGrid": "Kafelki",
+    "projects": {
+      "project1": "Nowoczesne okna w budynku mieszkalnym – elegancja i energooszczędność.",
+      "project2": "Przeszklone fasady aluminiowe – nowoczesne rozwiązania dla biurowców.",
+      "project3": "Klasyczne drewniane okna w zabytkowej kamienicy – połączenie stylu i funkcjonalności.",
+      "project4": "Klasyczne drewniane okna w zabytkowej kamienicy – połączenie stylu i funkcjonalności.",
+      "project5": "Realizacja Barczak Okna.",
+      "project6": "Realizacja Barczak Okna.",
+      "project7": "Realizacja Barczak Okna."
+    }
+  },
+  "contact": {
+    "title": "Kontakt",
+    "subtitle": "Skontaktuj się z nami, aby dowiedzieć się więcej.",
+    "imageAlt": "Kontakt",
+    "phone": "Telefon",
+    "email": "E-mail",
+    "address": "Adres",
+    "hours": "Godziny otwarcia",
+    "hoursValue": "Pon–Pt: 8:00–17:00, Sob: 9:00–13:00"
+  },
+  "about": {
+    "title": "O nas",
+    "subtitle": "Jesteśmy firmą z wieloletnim doświadczeniem w branży stolarki okiennej i drzwiowej.",
+    "imageAlt": "O nas"
+  },
+  "footer": {
+    "rights": "© {{year}} Barczak Okna. Wszelkie prawa zastrzeżone.",
+    "privacy": "Polityka Prywatności",
+    "contact": "Kontakt"
+  },
+  "offer": {
+    "goToWebsite": "Przejdź do strony"
+  }
+}

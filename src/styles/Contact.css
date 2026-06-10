@@ -1,0 +1,90 @@
+.contact-layout {
+  display: flex;
+  gap: 40px;
+  margin-top: 40px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.contact-map {
+  flex: 1 1 500px;
+  height: 600px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+}
+
+.contact-info {
+  flex: 0 1 340px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  border-radius: 14px;
+  padding: 22px 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.contact-icon {
+  font-size: 1.8rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.contact-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #6b7280;
+  margin-bottom: 4px;
+}
+
+.contact-value {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #1e3a8a;
+}
+
+.contact-link {
+  text-decoration: none;
+  color: #1e3a8a;
+  transition: color 0.2s;
+}
+
+.contact-link:hover {
+  color: #3b82f6;
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .contact-layout {
+    flex-direction: column;
+  }
+
+  .contact-map {
+    flex: 1 1 100%;
+    width: 100%;
+    height: 320px;
+  }
+
+  .contact-map .leaflet-container {
+    height: 320px !important;
+  }
+
+  .contact-info {
+    flex: 1 1 100%;
+  }
+}
