@@ -3,13 +3,15 @@ import { useTranslation } from "react-i18next";
 
 const About: React.FC = () => {
   const { t } = useTranslation();
+  const basePath = process.env.PUBLIC_URL || "";
+
   return (
     <section className="page-container">
       <h1 className="page-title">{t('about.title')}</h1>
       <p className="page-text">
         {t('about.subtitle')}
       </p>
-      <img src="/images/about.jpg" alt={t('about.imageAlt')} className="page-image" />
+      <img src={`${basePath}/images/about.jpg`} alt={t('about.imageAlt')} className="page-image" />
     </section>
   );
 };

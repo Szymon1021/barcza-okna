@@ -5,16 +5,17 @@ import { useTranslation } from "react-i18next";
 const Project: React.FC = () => {
   const { t } = useTranslation();
   const [lightbox, setLightbox] = useState<number | null>(null);
+  const basePath = process.env.PUBLIC_URL || "";
 
   const projects = useMemo(() => [
-    { src: "/images/project1.png", description: t("project.projects.project1") },
-    { src: "/images/project2.png", description: t("project.projects.project2") },
-    { src: "/images/project3.png", description: t("project.projects.project3") },
-    { src: "/images/project4.png", description: t("project.projects.project4") },
-    { src: "/images/WhatsApp%20Image%202026-03-31%20at%2016.12.53.jpeg", description: t("project.projects.project5") },
-    { src: "/images/WhatsApp%20Image%202026-05-30%20at%2007.07.46.jpeg", description: t("project.projects.project6") },
-    { src: "/images/WhatsApp%20Image%202026-06-10%20at%2017.57.41.jpeg", description: t("project.projects.project7") },
-  ], [t]);
+    { src: `${basePath}/images/project1.png`, description: t("project.projects.project1") },
+    { src: `${basePath}/images/project2.png`, description: t("project.projects.project2") },
+    { src: `${basePath}/images/project3.png`, description: t("project.projects.project3") },
+    { src: `${basePath}/images/project4.png`, description: t("project.projects.project4") },
+    { src: `${basePath}/images/WhatsApp%20Image%202026-03-31%20at%2016.12.53.jpeg`, description: t("project.projects.project5") },
+    { src: `${basePath}/images/WhatsApp%20Image%202026-05-30%20at%2007.07.46.jpeg`, description: t("project.projects.project6") },
+    { src: `${basePath}/images/WhatsApp%20Image%202026-06-10%20at%2017.57.41.jpeg`, description: t("project.projects.project7") },
+  ], [t, basePath]);
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {

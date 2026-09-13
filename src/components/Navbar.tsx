@@ -8,6 +8,7 @@ const Navbar: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
   const { t, i18n } = useTranslation();
+  const basePath = process.env.PUBLIC_URL || "";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,7 +33,7 @@ const Navbar: React.FC = () => {
       <div className="header">
         <div className="flex items-center">
           <Link to="/">
-            <img src="/images/logo_barczak.jpg" alt="Barczak Okna" className="logo" />
+            <img src={`${basePath}/images/logo_barczak.jpg`} alt="Barczak Okna" className="logo" />
           </Link>
         </div>
 
@@ -59,7 +60,7 @@ const Navbar: React.FC = () => {
 
         <div className="navbar-right">
           <img
-            src={i18n.language.startsWith('pl') ? "/images/flag_de.png" : "/images/flag_pl.png"}
+            src={i18n.language.startsWith('pl') ? `${basePath}/images/flag_de.png` : `${basePath}/images/flag_pl.png`}
             alt={i18n.language.startsWith('pl') ? "DE" : "PL"}
             className="icon"
             onClick={changeLanguage}

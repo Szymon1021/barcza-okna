@@ -1,5 +1,7 @@
 import { Brand } from "../types";
 
+const basePath = process.env.PUBLIC_URL || "";
+
 export const brands: Brand[] = [
   {
     id: 1,
@@ -184,7 +186,7 @@ export const brands: Brand[] = [
   {
     id: 2,
     name: "Martom",
-    logo: "/images/martom.png",
+    logo: `${basePath}/images/martom.png`,
     description:
       "Drzwi są wizytówką naszego domu. Stanowią zapowiedź tego, co jest wewnątrz. Są ambasadorem i równocześnie strażnikiem ogniska domowego. Zanim przekroczy się próg domu, ma się do czynienia właśnie z nimi. To drzwi witają naszych gości.",
     descriptionKey: "brands.martom.description",
