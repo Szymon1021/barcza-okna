@@ -1,4 +1,4 @@
-﻿import { useState } from "react";
+import { useState } from "react";
 import "../styles/Offer.css";
 import { brands } from "../data/brand";
 import { useTranslation } from "react-i18next";

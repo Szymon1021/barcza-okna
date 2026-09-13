@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import "../styles/Home.css";
 import "../styles/Project.css";
 import { useTranslation } from "react-i18next";
@@ -105,11 +105,12 @@ const Home: React.FC = () => {
   const [current, setCurrent] = useState(0);
   const [hovered, setHovered] = useState(false);
   const [lightbox, setLightbox] = useState<number | null>(null);
+  const basePath = process.env.PUBLIC_URL || "";
 
-  const projects = useMemo(
-    () => IMAGE_SRCS.map((src) => ({ src, description: t("project.projects.project5") })),
-    [t]
-  );
+  const projects = IMAGE_SRCS.map((src) => ({
+    src: `${basePath}${src}`,
+    description: t("project.projects.project5"),
+  }));
 
   useEffect(() => {
     const interval = setInterval(() => {

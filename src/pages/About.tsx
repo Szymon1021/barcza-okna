@@ -4,6 +4,7 @@ import { assetUrl } from "../utils/assets";
 
 const About: React.FC = () => {
   const { t } = useTranslation();
+
   return (
     <section className="page-container">
       <h1 className="page-title">{t('about.title')}</h1>
