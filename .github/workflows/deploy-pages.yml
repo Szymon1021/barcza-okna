@@ -33,7 +33,7 @@ jobs:
       - name: Build
         run: npm run build
         env:
-          PUBLIC_URL: /${{ github.event.repository.name }}
+          PUBLIC_URL: ""
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
