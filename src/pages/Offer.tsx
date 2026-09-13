@@ -2,6 +2,7 @@
 import "../styles/Offer.css";
 import { brands } from "../data/brand";
 import { useTranslation } from "react-i18next";
+import { assetUrl } from "../utils/assets";
 import type { Image } from "../types";
 
 const Offer: React.FC = () => {
@@ -22,7 +23,7 @@ const Offer: React.FC = () => {
         <div key={brand.id} className="brand-container">
           <div className="brand-div">
             <a href={brand.link} target="_blank" rel="noopener noreferrer">
-              <img src={brand.logo} alt={brand.name} className="brand-logo" />
+              <img src={assetUrl(brand.logo)} alt={brand.name} className="brand-logo" />
             </a>
             <h2 className="brand-title">{brand.name}</h2>
           </div>
@@ -45,7 +46,7 @@ const Offer: React.FC = () => {
                     className="offer-tile"
                     onClick={() => openModal(img, brand.name)}
                   >
-                    <img src={img.src} alt={img.name} className="offer-tile-img" />
+                    <img src={assetUrl(img.src)} alt={img.name} className="offer-tile-img" />
                     <div className="offer-tile-overlay">
                       <span>{img.name}</span>
                     </div>
@@ -62,7 +63,7 @@ const Offer: React.FC = () => {
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <span className="close" onClick={closeModal}>&times;</span>
             <img
-              src={activeImg.srcModal || activeImg.src}
+              src={assetUrl(activeImg.srcModal || activeImg.src)}
               alt={activeImg.name}
               className="modal-image"
             />

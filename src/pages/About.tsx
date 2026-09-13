@@ -1,5 +1,6 @@
 import "../styles/Pages.css";
 import { useTranslation } from "react-i18next";
+import { assetUrl } from "../utils/assets";
 
 const About: React.FC = () => {
   const { t } = useTranslation();
@@ -9,7 +10,7 @@ const About: React.FC = () => {
       <p className="page-text">
         {t('about.subtitle')}
       </p>
-      <img src="/images/about.jpg" alt={t('about.imageAlt')} className="page-image" />
+      <img src={assetUrl("/images/about.jpg")} alt={t('about.imageAlt')} className="page-image" />
     </section>
   );
 };

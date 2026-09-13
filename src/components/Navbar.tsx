@@ -2,6 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 import "../styles/Navbar.css";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { assetUrl } from "../utils/assets";
 
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -32,7 +33,7 @@ const Navbar: React.FC = () => {
       <div className="header">
         <div className="flex items-center">
           <Link to="/">
-            <img src="/images/logo_barczak.jpg" alt="Barczak Okna" className="logo" />
+            <img src={assetUrl("/images/logo_barczak.jpg")} alt="Barczak Okna" className="logo" />
           </Link>
         </div>
 
@@ -59,7 +60,7 @@ const Navbar: React.FC = () => {
 
         <div className="navbar-right">
           <img
-            src={i18n.language.startsWith('pl') ? "/images/flag_de.png" : "/images/flag_pl.png"}
+            src={assetUrl(i18n.language.startsWith('pl') ? "/images/flag_de.png" : "/images/flag_pl.png")}
             alt={i18n.language.startsWith('pl') ? "DE" : "PL"}
             className="icon"
             onClick={changeLanguage}

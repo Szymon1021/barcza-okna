@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import "../styles/Home.css";
 import "../styles/Project.css";
 import { useTranslation } from "react-i18next";
+import { assetUrl } from "../utils/assets";
 
 const IMAGE_SRCS = [
   "/images/WhatsApp%20Image%202026-03-31%20at%2016.12.53.jpeg",
@@ -144,7 +145,7 @@ const Home: React.FC = () => {
           &#10094;
         </button>
         <div className="home-carousel-image-wrapper">
-          <img src={projects[current].src} alt="Home Slide" className="home-image" />
+          <img src={assetUrl(projects[current].src)} alt="Home Slide" className="home-image" />
         </div>
         <div className={`home-carousel-dots ${hovered ? "visible" : "hidden"}`}>
           {projects.map((_, index) => (
@@ -165,7 +166,7 @@ const Home: React.FC = () => {
 
       {/* Tekst powitalny */}
       <div className="home-text">
-        <img src="/images/logo_barczak.jpg" alt="Barczak Okna" className="home-text-logo" />
+        <img src={assetUrl("/images/logo_barczak.jpg")} alt="Barczak Okna" className="home-text-logo" />
         <h1>{t('home.welcome')}</h1>
         <p>{t('home.subtitle')}</p>
       </div>
@@ -177,7 +178,7 @@ const Home: React.FC = () => {
         <div className="home-projects-grid">
           {projects.map((p, i) => (
             <div key={i} className="project-tile" onClick={() => setLightbox(i)}>
-              <img src={p.src} alt={`Realizacja ${i + 1}`} className="project-tile-image" />
+              <img src={assetUrl(p.src)} alt={`Realizacja ${i + 1}`} className="project-tile-image" />
               <div className="project-tile-overlay">
                 <p>{p.description}</p>
               </div>
@@ -196,7 +197,7 @@ const Home: React.FC = () => {
             &#10094;
           </button>
           <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
-            <img src={projects[lightbox].src} alt="Realizacja" className="lightbox-image" />
+            <img src={assetUrl(projects[lightbox].src)} alt="Realizacja" className="lightbox-image" />
             <p className="lightbox-caption">{projects[lightbox].description}</p>
           </div>
           <button

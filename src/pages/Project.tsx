@@ -1,6 +1,7 @@
 ﻿import { useEffect, useMemo, useState } from "react";
 import "../styles/Project.css";
 import { useTranslation } from "react-i18next";
+import { assetUrl } from "../utils/assets";
 
 const Project: React.FC = () => {
   const { t } = useTranslation();
@@ -36,7 +37,7 @@ const Project: React.FC = () => {
       <div className="project-grid">
         {projects.map((p, i) => (
           <div key={i} className="project-tile" onClick={() => setLightbox(i)}>
-            <img src={p.src} alt={`Projekt ${i + 1}`} className="project-tile-image" />
+            <img src={assetUrl(p.src)} alt={`Projekt ${i + 1}`} className="project-tile-image" />
             <div className="project-tile-overlay">
               <p>{p.description}</p>
             </div>
@@ -56,7 +57,7 @@ const Project: React.FC = () => {
             &#10094;
           </button>
           <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
-            <img src={projects[lightbox].src} alt="Projekt" className="lightbox-image" />
+            <img src={assetUrl(projects[lightbox].src)} alt="Projekt" className="lightbox-image" />
             <p className="lightbox-caption">{projects[lightbox].description}</p>
           </div>
           <button
