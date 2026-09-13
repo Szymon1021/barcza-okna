@@ -5,9 +5,16 @@ import Home from "./pages/Home";
 import Offer from "./pages/Offer";
 import Contact from "./pages/Contact";
 
+const publicUrl = process.env.PUBLIC_URL || "";
+const redirectedRoute = new URLSearchParams(window.location.search).get("route");
+
+if (redirectedRoute) {
+  window.history.replaceState(null, "", `${publicUrl}${redirectedRoute}`);
+}
+
 const App: React.FC = () => {
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL || "/"}>
       <div className="flex flex-col min-h-screen" id="barczak-okna">
         <Navbar />
         <main className="flex-grow">
