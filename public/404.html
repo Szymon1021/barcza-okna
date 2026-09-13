@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <script>
+      const path = window.location.pathname;
+      const repo = path.split('/')[1];
+      const route = path.split('/').slice(2).join('/');
+      const query = window.location.search;
+      const hash = window.location.hash;
+
+      if (repo) {
+        window.location.replace(`/${repo}/?route=/${route}${query}${hash}`);
+      }
+    </script>
+  </head>
+  <body></body>
+</html>
